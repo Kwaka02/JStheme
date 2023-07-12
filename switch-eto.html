@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF=8" />
+    <script>
+      function jikkan(year) {
+        //十干
+        switch (year % 10) {
+          case 0:
+            e = "庚";
+            break;
+          case 1:
+            e = "辛";
+            break;
+          case 2:
+            e = "壬";
+            break;
+          case 3:
+            e = "癸";
+            break;
+          case 4:
+            e = "甲";
+            break;
+          case 5:
+            e = "乙";
+            break;
+          case 6:
+            e = "丙";
+            break;
+          case 7:
+            e = "丁";
+            break;
+          case 8:
+            e = "戊";
+            break;
+          case 9:
+            e = "己";
+            break;
+        }
+        return e;
+      }
+      function junishi(year) {
+        //十干
+        switch (year % 12) {
+          case 0:
+            e = "甲";
+            break;
+          case 1:
+            e = "酉";
+            break;
+          case 2:
+            e = "戌";
+            break;
+          case 3:
+            e = "亥";
+            break;
+          case 4:
+            e = "子";
+            break;
+          case 5:
+            e = "牛";
+            break;
+          case 6:
+            e = "寅";
+            break;
+          case 7:
+            e = "卯";
+            break;
+          case 8:
+            e = "辰";
+            break;
+          case 9:
+            e = "巳";
+            break;
+          case 10:
+            e = "午";
+            break;
+          case 11:
+            e = "未";
+            break;
+        }
+        return e;
+      }
+      function calc() {
+        //変数定義
+        let y = document.getElementById("year").value;
+        //表示させるための処理
+        document.getElementById("y").textContent = y;
+
+        //関数ができたものを足す
+        let e = jikkan(y) + junishi(y);
+        document.getElementById("e").textContent = e;
+      }
+    </script>
+  </head>
+  <body>
+    <h2><span id="y"></span>年の十干は<span id="e"></span></h2>
+    <p>
+      <input id="year" value="2023" />
+      <button onclick="calc()">計算</button>
+    </p>
+  </body>
+</html>
