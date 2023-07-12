@@ -6,7 +6,20 @@
             function calcBMI(){
                 let a = document.getElementById("i0").value;
                 let b = document.getElementById("i1").value;
-                if(a)
+                let BMI  = (b/(a*a));
+                if(BMI < 18.5)
+                {
+                    document.getElementById("result").textContent = "瘦せすぎ";
+                }
+                else if(BMI >= 25)
+                {
+                    document.getElementById("result").textContent = "肥満気味"; 
+                }
+                else
+                {
+                    document.getElementById("result").textContent = "標準"; 
+                }
+                document.getElementById("BMI").textContent = BMI;
             }
         </script>
     </head>
@@ -15,6 +28,6 @@
         身長(m):<input id="i0" value="1.7">
         体重(kg):<input id="i1" value="65">
         <button onclick="calcBMI()">check</button>
-        <p id="result"></p>
+        <p id="result"></p><p id="BMI"></p>
     </body>
 </html>
