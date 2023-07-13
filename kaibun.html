@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function kaibun() {
+        //sは文字列変数のため、文字コード。nは整数型。
+        let s = document.getElementById("source").value;
+        //.lengthで文字列の長さを表している
+        for (let n = 0; n <= s.length; n++) {
+          //.charAt(n)で文字列の番号を取得できる
+          //+=の右で後ろから一文字取得しているので、それを一文字ずつ文字列にする式
+          document.getElementById("result").textContent += s.charAt(
+            s.length - n
+          );
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input id="source" />
+    <button onclick="kaibun()">回文</button>
+    <p id="result"></p>
+  </body>
+</html>
