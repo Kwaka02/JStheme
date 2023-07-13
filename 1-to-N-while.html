@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function calcSum() {
+        //タグを持ってくる操作
+        let max = document.getElementById("max").value;
+        let total = 0;
+        let n = 1;
+        //forは回数を制限しているが、whileは条件を満たすまで処理し続ける
+        while (n <= max) {
+          total += n;
+          n++;
+        }
+        document.getElementById("val").textContent = max;
+        document.getElementById("sum").textContent = total;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>1から<span id="val"></span>の合計は<span id="sum"></span></h2>
+    <input id="max" , value="10" />
+    <button onclick="calcSum()">合計</button>
+  </body>
+</html>
