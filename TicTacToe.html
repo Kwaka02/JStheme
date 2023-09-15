@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      #board {
+        background-color: blue;
+      }
+      td.cell {
+        background-color: white;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+    </style>
+    <script>
+      function init() {
+        let b = document.getElementById("board");
+        for (let i = 0; i < b.children[3]; i++) {
+          let tr = document.createElement("tr");
+          for (let j = 0; j < b.children[3]; j++) {
+            let td = document.createElement("td");
+            td.className = "cell";
+            td.id = "cell" + i + j;
+            let row = b.children[1].children[i];
+            td.onclick = clicked;
+            tr.appendChild(td);
+          }
+          b.appendChild(tr);
+        }
+      }
+      function clicked(e) {
+        document.getElementById("info").textContent = e.target.id + "clicked";
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <table id="board"></table>
+    <n2 id="info"></n2>
+  </body>
+</html>
